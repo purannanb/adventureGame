@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "game.css">
+    <title>Dungeon Adventure</title>
+    <script>
+
+      function hideo()
+      {
+        document.getElementById('hide').style.visibility = "hidden";
+      }
+
+    function getsStats()
+      {
+        document.getElementById('hide').style.visibility = "visible";
+        var x = window.localStorage.getItem('statsName');
+        document.getElementById("statOne").innerHTML = "Character Name: " + x;
+
+        var y = window.localStorage.getItem('statsRoomOne');
+        document.getElementById("statTwo").innerHTML = "First Room Selected: " + y;
+
+        var z = window.localStorage.getItem('statsRoomTwo');
+        document.getElementById("statThree").innerHTML = "Second Room Selected: " + z;
+
+        var e = window.localStorage.getItem('statsStep');
+        document.getElementById("statFour").innerHTML = "Steps Climbed: " + e;
+
+      }
+    </script>
+  </head>
+
+  <body onload = "hideo()"><center>
+
+      <IMG STYLE = "position:absolute; TOP:150px; LEFT:950px; WIDTH:350px; HEIGHT:550px" SRC = "winner.png">
+      <IMG STYLE = "position:absolute; TOP:300px; LEFT:50px; WIDTH:400px; HEIGHT:375px" SRC = "treasure.png">
+
+      <h1>Stats</h1>
+      <hr><br>
+
+      <input id = "button" type = "button" value = "See Stats" onclick = "getsStats()">
+      <p id = "statOne"></p>
+      <p id = "statTwo"></p>
+      <p id = "statThree"></p>
+      <p id = "statFour"></p>
+      <p id = "hide">Final Power Level: 10/10</p>
+
+   </body>
+</html>
